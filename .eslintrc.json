@@ -1,0 +1,211 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true,
+        "sourceType": "module"
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/component-class-suffix": "error",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-class-suffix": "error",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/no-inputs-metadata-property": "off",
+        "@angular-eslint/no-output-rename": "error",
+        "@angular-eslint/no-outputs-metadata-property": "off",
+        "@angular-eslint/use-lifecycle-interface": "error",
+        "@angular-eslint/use-pipe-transform-interface": "error",
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/naming-convention": 1,
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "@typescript-eslint/unified-signatures": "error",
+        "array-bracket-spacing": ["error", "never"],
+        "arrow-body-style": "error",
+        "arrow-parens": ["error", "as-needed"],
+        "brace-style": ["error", "1tbs"],
+        "block-spacing": [2, "always"],
+        "comma-dangle": "error",
+        "comma-spacing": [
+          2,
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "comma-style": 2,
+        "computed-property-spacing": 2,
+        "constructor-super": "error",
+        "dot-notation": "off",
+        "eol-last": "error",
+        "eqeqeq": ["error", "smart"],
+        "guard-for-in": "error",
+        "id-denylist": "off",
+        "id-match": "off",
+        "indent": [
+          "error",
+          2,
+          {
+            "ignoredNodes": ["VariableDeclaration[declarations.length=0]"],
+            "VariableDeclarator": {
+              "var": 2,
+              "let": 2,
+              "const": 2
+            },
+            "SwitchCase": 1
+          }
+        ],
+        "key-spacing": [
+          2,
+          {
+            "beforeColon": false,
+            "afterColon": true
+          }
+        ],
+        "lines-around-comment": [
+          2,
+          {
+            "beforeBlockComment": false,
+            "beforeLineComment": false
+          }
+        ],
+        "no-caller": "error",
+        "no-console": [
+          "off",
+          {
+            "allow": [
+              "warn",
+              "dir",
+              "timeLog",
+              "assert",
+              "clear",
+              "count",
+              "countReset",
+              "group",
+              "groupEnd",
+              "table",
+              "info",
+              "dirxml",
+              "error",
+              "groupCollapsed",
+              "Console",
+              "profile",
+              "profileEnd",
+              "timeStamp",
+              "context"
+            ]
+          }
+        ],
+        "no-debugger": "error",
+        "no-empty": "off",
+        "no-empty-function": "off",
+        "no-eval": "error",
+        "no-fallthrough": "error",
+        "no-multiple-empty-lines": [
+          2,
+          {
+            "max": 2
+          }
+        ],
+        "no-new-wrappers": "error",
+        "no-restricted-imports": "error",
+        "no-spaced-func": 2,
+        "no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "args": "none",
+            "ignoreRestSiblings": false
+          }
+        ],
+        "no-throw-literal": "error",
+        "no-trailing-spaces": "error",
+        "no-undef-init": "error",
+        "no-underscore-dangle": "off",
+        "no-unused-labels": "error",
+        "no-var": "error",
+        "object-curly-spacing": [2, "always"],
+        "operator-assignment": [2, "always"],
+        "operator-linebreak": [2, "before"],
+        "prefer-const": "error",
+        "quote-props": [2, "as-needed"],
+        "quotes": [
+          2,
+          "single",
+          {
+            "avoidEscape": true
+          }
+        ],
+        "radix": "error",
+        "semi-spacing": [
+          2,
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "semi": ["error", "always"],
+        "space-before-function-paren": "off",
+        "space-before-blocks": 2,
+        "space-in-parens": ["error", "never"],
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "markers": ["/"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
