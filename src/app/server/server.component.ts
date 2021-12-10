@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./server.component.scss']
 })
 export class ServerComponent {
-  serverId = 1;
+  @Input() server!: {type: string; name: string};
+  @Output() serverDeleted = new EventEmitter<string>();
   serverStatus = 'offline';
 
   constructor() {
@@ -16,4 +17,8 @@ export class ServerComponent {
   getServerStatus(): string {
     return this.serverStatus;
   };
+
+  onDeleteServer() {
+    this.serverDeleted.emit(this.server.name);
+  }
 };

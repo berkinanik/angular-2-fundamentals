@@ -1,1 +1,33 @@
-<app-servers></app-servers>
+<div class="container">
+  <div class="row">
+    <div class="column mt-3">
+      <div class="row">
+        <app-new-server
+          (serverCreated)="onServerAdded($event)"
+        ></app-new-server>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="column d-grid gap-1 mt-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Two Way Binding Example"
+            [(ngModel)]="twoWayBindingText"
+          />
+          <p>{{ twoWayBindingText }}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <app-servers>
+          <app-server
+            *ngFor="let server of servers"
+            [server]="server"
+            (serverDeleted)="onServerDeleted($event)"
+          ></app-server>
+        </app-servers>
+      </div>
+    </div>
+  </div>
+</div>

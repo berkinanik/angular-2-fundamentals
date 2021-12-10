@@ -1,14 +1,16 @@
 <div class="card">
-  <div
-    class="card-body text-white"
-    [ngClass]="{
-      'bg-success': serverStatus === 'online',
-      'bg-danger': serverStatus === 'offline'
-    }"
-    [ngStyle]="{
-      'text-decoration': serverStatus === 'offline' ? 'underline' : 'none'
-    }"
-  >
-    Server with ID: {{ serverId }} is {{ getServerStatus() }}
+    <div
+      class="card-body text-white"
+      [ngClass]="{
+        'bg-success': serverStatus === 'online',
+        'bg-danger': serverStatus === 'offline'
+      }"
+      [ngStyle]="{
+        'text-decoration': serverStatus === 'offline' ? 'underline' : 'none'
+      }"
+      (click)="onDeleteServer()"
+      title="Click to delete server"
+    >
+      Server with name: {{ server.name }} is {{ getServerStatus() }}
+    </div>
   </div>
-</div>
